@@ -1,6 +1,11 @@
 let canO = document.querySelector(".canO");
 let canG = document.querySelector(".canG");
 let bg1 = document.querySelector(".bg1");
+let bg2 = document.querySelector(".bg2");
+let productPng = document.querySelector(".productPng");
+let ctabtn = document.querySelector(".ctabtn");
+let textPng = document.querySelector(".textPng");
+let offerPng = document.querySelector(".offerPng");
 let bottom = document.querySelector(".bottom");
 dragElement(canO);
 
@@ -57,6 +62,13 @@ function dragElement(elmnt) {
         canG.classList ? canG.classList.add('hidden') : canG.className += ' hidden';
         bottom.classList ? bottom.classList.add('hidden') : bottom.className += ' hidden';
         bg2.className = bg2.className.replace('hidden', '');
+        textPng.className = textPng.className.replace('hidden', '');
+        offerPng.className = offerPng.className.replace('hidden', '');
+        ctabtn.className = ctabtn.className.replace('hidden', '');
+        productPng.className = productPng.className.replace('hidden', '');
+        textPng.classList ? textPng.classList.add('text-animation') : textPng.className += ' text-animation';
+        offerPng.classList ? offerPng.classList.add('text-animation') : offerPng.className += ' text-animation';
+        
       }
       // if (leftSpace>230) {leftSpace=230}
       // if (topSpace>155) {topSpace=155}

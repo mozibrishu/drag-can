@@ -12,6 +12,7 @@ body,html{
     width: 300px;
     height: 250px;
     background-color: antiquewhite;
+
 }
 
 .canG{
@@ -28,7 +29,23 @@ body,html{
     bottom: 0px;
     right: 0px;
 }
+.textPng{
+    top: 70px;
+    left: 136px;
+}
 
+.offerPng{
+    top: 176px;
+    left: 22px;
+}
+.productPng{
+    top: 48px;
+    left: 50px;
+}
+.ctabtn{
+    top: 210px;
+    left: 190px;
+}
 .absolute{
     position: absolute;
 }
@@ -38,6 +55,18 @@ body,html{
 
 .animation-shake{
     animation: shake 3s infinite; 
+}
+
+.text-animation{
+    animation: textpng .5s;
+}
+@keyframes textpng {
+    0%{
+        transform: scale(.5);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 @keyframes shake {
     0%{
