@@ -132,3 +132,28 @@ body,html{
 }
 
 
+.dbcan-animation{
+    animation: canMove .8s;
+}
+
+@keyframes canMove {
+    0%{
+        transform: translateX(300px);
+    }    
+    100%{
+        transform: translate(0px);
+    }
+}
+
+.pulse-animation{
+    animation: pulse .8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    50%{
+        transform: scale(.97);
+    }    
+    0%,100%{
+        transform: scale(1);
+    }
+}
