@@ -140,5 +140,6 @@ function dragElementRight(elmnt) {
     function closeDragElement() {
         document.onmouseup = null;
         document.onmousemove = null;
+        setTimeout(initialPosition, 3000);
     }
 }
