@@ -21,7 +21,8 @@ function dragElement(elmnt) {
     function dragMouseDown(e) {
         canO.className = canO.className.replace('animation-shake', '');
         canG.className = canG.className.replace('animation-shake', '');
-
+        canO.classList ? canO.classList.add('rotateRight') : canO.className += ' rotateRight';
+        canG.classList ? canG.classList.add('rotateLeft') : canG.className += ' rotateLeft';
     //   drag.classList ? drag.classList.add('hidden') : drag.className += ' hidden';
   
       e = e || window.event;
@@ -55,8 +56,8 @@ function dragElement(elmnt) {
       // if (leftSpace>20) {leftSpace=20}
       if (leftSpace<43) {leftSpace=43}
       if (rLeftSpace>193) {rLeftSpace=193}
-      if (leftSpace>86){
-        leftSpace=86;
+      if (leftSpace>72){
+        leftSpace=72;
         bg1.classList ? bg1.classList.add('hidden') : bg1.className += ' hidden';
         canO.classList ? canO.classList.add('hidden') : canO.className += ' hidden';
         canG.classList ? canG.classList.add('hidden') : canG.className += ' hidden';

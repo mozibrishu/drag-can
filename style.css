@@ -15,6 +15,12 @@ body,html{
 
 }
 
+.rotateRight{
+    transform: rotate(15deg);
+}
+.rotateLeft{
+    transform: rotate(-15deg);
+}
 .canG{
     top: 28px;
     left: 193px;
