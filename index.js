@@ -60,6 +60,8 @@ function initialPosition() {
     canG.className = canG.className.replace('rotateLeft', '');
     canO.classList ? canO.classList.add('animation-shake') : canO.className += ' animation-shake';
     canG.classList ? canG.classList.add('animation-shake') : canG.className += ' animation-shake';
+    canO.style.left = "43px";
+    canG.style.left = "193px";
 }
 
 function operationSecondSlide() {
