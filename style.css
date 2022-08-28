@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body,html{
+    width: 300px;
+    height: 250px;
+}
+.container{
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 250px;
+    background-color: antiquewhite;
+    background-image: url('images/1.jpg');
+}
+
+.canG{
+    top: 28px;
+    left: 193px;
+}
+
+.canO{
+    top: 27px;
+    left: 43px;
+}
+
+.bottom{
+    bottom: 0px;
+    right: 0px;
+}
+
+.absolute{
+    position: absolute;
+}
+.hidden{
+    display: none;
+}
+
+.animation-shake{
+    animation: shake 3s infinite; 
+}
+@keyframes shake {
+    0%{
+        transform: rotate(0deg);
+    }
+    5%{
+        transform: rotate(-3deg);
+    }
+    10%{
+        transform: rotate(3deg);
+    }
+    15%{
+        transform: rotate(-3deg);
+    }
+    20%{
+        transform: rotate(3deg);
+    }
+    25%{
+        transform: rotate(-3deg);
+    }
+    30%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.animation-vibrate{
+    animation: vibrate 3s infinite;
+}
+@keyframes vibrate {
+    0%{
+        transform: rotate(0deg);
+    }
+    5%{
+        transform: rotate(-2deg);
+    }
+    10%{
+        transform: rotate(2deg);
+    }
+    15%{
+        transform: rotate(-2deg);
+    }
+    20%{
+        transform: rotate(2deg);
+    }
+    25%{
+        transform: rotate(-2deg);
+    }
+    30%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
