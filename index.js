@@ -65,12 +65,17 @@ function dragElementLeft(elmnt) {
 }
 
 function initialPosition() {
+
+    canO.classList ? canO.className += ' animation-shake addTransition' : canO.classList.add('animation-shake');
+    canG.classList ? canG.className += ' animation-shake addTransition' : canG.classList.add('animation-shake');
     canO.className = canO.className.replace('rotateRight', '');
     canG.className = canG.className.replace('rotateLeft', '');
-    canO.classList ? canO.classList.add('animation-shake') : canO.className += ' animation-shake';
-    canG.classList ? canG.classList.add('animation-shake') : canG.className += ' animation-shake';
     canO.style.left = "43px";
     canG.style.left = "193px";
+    setTimeout(()=>{
+        canO.className = canO.className.replace('addTransition', '');
+    canG.className = canG.className.replace('addTransition', '');
+    },500);
 }
 
 function operationSecondSlide() {

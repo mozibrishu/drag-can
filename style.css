@@ -35,6 +35,9 @@ left: ;
     top: 27px;
     left: 43px;
 }
+.addTransition{
+    transition: left .5s ease-in-out;
+}
 
 .bottom{
     bottom: 0px;
