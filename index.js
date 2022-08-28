@@ -148,3 +148,92 @@ function dragElementRight(elmnt) {
         setTimeout(initialPosition, 3000);
     }
 }
+
+function dragElementMobileLeft(elmnt) {
+    var pos1 = 0, pos2 = 0;
+    var rElmnt = document.getElementById("canG");
+    if (document.getElementById(elmnt.id + "header")) {
+        document.getElementById(elmnt.id + "header").ontouchstart = dragMouseDown;
+    } else {
+        elmnt.ontouchstart = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+        animationRotation();
+
+        e.preventDefault();
+        e = e.touches[0] || window.event;
+        pos2 = e.clientX;
+        document.ontouchmove = elementDrag;
+        document.ontouchend = closeDragElement;
+    }
+
+    function elementDrag(e) {
+        e = e.touches[0] || window.event;
+        pos1 = pos2 - e.clientX;
+
+        pos2 = e.clientX;
+        leftSpace = elmnt.offsetLeft - pos1;
+        rLeftSpace = rElmnt.offsetLeft + pos1;
+
+        if (leftSpace < 43) { leftSpace = 43 }
+        if (rLeftSpace > 193) { rLeftSpace = 193 }
+        if (leftSpace > 72) {
+            leftSpace = 72;
+            operationSecondSlide();
+        }
+        elmnt.style.left = leftSpace + "px";
+        rElmnt.style.left = rLeftSpace + "px";
+    }
+
+    function closeDragElement() {
+        document.ontouchend = null;
+        document.ontouchmove = null;
+        setTimeout(initialPosition, 3000);
+    }
+}
+
+function dragElementMobileRight(elmnt) {
+    var pos1 = 0, pos2 = 0;
+    var lElmnt = document.getElementById("canO");
+    if (document.getElementById(elmnt.id + "header")) {
+        document.getElementById(elmnt.id + "header").ontouchstart = dragMouseDown;
+    } else {
+        elmnt.ontouchstart = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+        animationRotation();
+
+        e.preventDefault();
+        e = e.touches[0] || window.event;
+        pos2 = e.clientX;
+        document.ontouchmove = elementDrag;
+        document.ontouchend = closeDragElement;
+    }
+
+    function elementDrag(e) {
+        e = e.touches[0] || window.event;
+        pos1 = pos2 - e.clientX;
+
+        pos2 = e.clientX;
+        leftSpace = elmnt.offsetLeft - pos1;
+        lLeftSpace = lElmnt.offsetLeft + pos1;
+
+        console.log(leftSpace);
+        if (leftSpace > 193) { leftSpace = 193 }
+        if (lLeftSpace < 43) { lLeftSpace = 43 }
+        if (leftSpace < 165) {
+            leftSpace = 165;
+            operationSecondSlide();
+        }
+        elmnt.style.left = leftSpace + "px";
+        lElmnt.style.left = lLeftSpace + "px";
+    }
+
+    function closeDragElement() {
+        document.ontouchend = null;
+        document.ontouchmove = null;
+        setTimeout(initialPosition, 3000);
+    }
+}
