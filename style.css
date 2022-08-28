@@ -12,7 +12,6 @@ body,html{
     width: 300px;
     height: 250px;
     background-color: antiquewhite;
-    background-image: url('images/1.jpg');
 }
 
 .canG{
@@ -96,3 +95,5 @@ body,html{
         transform: rotate(0deg);
     }
 }
+
+
