@@ -11,7 +11,7 @@ dragElementLeft(canO);
 dragElementRight(canG);
 
 function dragElementLeft(elmnt) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0, pos5 = 0, pos6 = 0;
+    var pos1 = 0, pos2 = 0;
     var rElmnt = document.getElementById("canG");
     if (document.getElementById(elmnt.id + "header")) {
         document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
@@ -24,7 +24,7 @@ function dragElementLeft(elmnt) {
 
         e = e || window.event;
         e.preventDefault();
-        pos3 = e.clientX;
+        pos2 = e.clientX;
         document.onmousemove = elementDrag;
         document.onmouseup = closeDragElement;
     }
@@ -32,9 +32,9 @@ function dragElementLeft(elmnt) {
     function elementDrag(e) {
         e = e || window.event;
         e.preventDefault();
-        pos1 = pos3 - e.clientX;
+        pos1 = pos2 - e.clientX;
 
-        pos3 = e.clientX;
+        pos2 = e.clientX;
         leftSpace = elmnt.offsetLeft - pos1;
         rLeftSpace = rElmnt.offsetLeft + pos1;
 
@@ -46,13 +46,20 @@ function dragElementLeft(elmnt) {
         }
         elmnt.style.left = leftSpace + "px";
         rElmnt.style.left = rLeftSpace + "px";
-        console.log(rLeftSpace);
     }
 
     function closeDragElement() {
         document.onmouseup = null;
         document.onmousemove = null;
+        setTimeout(initialPosition, 3000);
     }
+}
+
+function initialPosition() {
+    canO.className = canO.className.replace('rotateRight', '');
+    canG.className = canG.className.replace('rotateLeft', '');
+    canO.classList ? canO.classList.add('animation-shake') : canO.className += ' animation-shake';
+    canG.classList ? canG.classList.add('animation-shake') : canG.className += ' animation-shake';
 }
 
 function operationSecondSlide() {
@@ -73,15 +80,15 @@ function operationSecondSlide() {
 
 }
 
-function animationRotation(){
-canO.className = canO.className.replace('animation-shake', '');
-        canG.className = canG.className.replace('animation-shake', '');
-        canO.classList ? canO.classList.add('rotateRight') : canO.className += ' rotateRight';
-        canG.classList ? canG.classList.add('rotateLeft') : canG.className += ' rotateLeft';
+function animationRotation() {
+    canO.className = canO.className.replace('animation-shake', '');
+    canG.className = canG.className.replace('animation-shake', '');
+    canO.classList ? canO.classList.add('rotateRight') : canO.className += ' rotateRight';
+    canG.classList ? canG.classList.add('rotateLeft') : canG.className += ' rotateLeft';
 }
 
 function dragElementRight(elmnt) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0, pos5 = 0, pos6 = 0;
+    var pos1 = 0, pos2 = 0;
     var lElmnt = document.getElementById("canO");
     if (document.getElementById(elmnt.id + "header")) {
         document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
@@ -94,7 +101,7 @@ function dragElementRight(elmnt) {
 
         e = e || window.event;
         e.preventDefault();
-        pos3 = e.clientX;
+        pos2 = e.clientX;
         document.onmousemove = elementDrag;
         document.onmouseup = closeDragElement;
     }
@@ -102,9 +109,9 @@ function dragElementRight(elmnt) {
     function elementDrag(e) {
         e = e || window.event;
         e.preventDefault();
-        pos1 = pos3 - e.clientX;
+        pos1 = pos2 - e.clientX;
 
-        pos3 = e.clientX;
+        pos2 = e.clientX;
         leftSpace = elmnt.offsetLeft - pos1;
         lLeftSpace = lElmnt.offsetLeft + pos1;
 
@@ -117,7 +124,6 @@ function dragElementRight(elmnt) {
         }
         elmnt.style.left = leftSpace + "px";
         lElmnt.style.left = lLeftSpace + "px";
-        console.log(lLeftSpace);
     }
 
     function closeDragElement() {
